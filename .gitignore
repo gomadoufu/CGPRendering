@@ -4,3 +4,4 @@ node_modules/
 !*.config.js
 dist/
 .cache/
+.DS_Store
