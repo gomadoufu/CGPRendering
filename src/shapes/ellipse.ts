@@ -52,7 +52,25 @@ export class Ellipse implements BaseShape {
     }
 
     calcT(e: THREE.Vector3, v: THREE.Vector3): number {
-        return -1;
+        let alpha, beta, gamma; //tに関する二次方程式の係数
+        let D;
+        const K = 1;
+        let M = new THREE.Matrix4();
+        let r0d = new THREE.Vector3();
+
+        r0d = r0d.subVectors(e, this.position);
+        M = M.scale(new THREE.Vector3(1 / (this.size.x * this.size.x), 1 / (this.size.y * this.size.y), 1 / (this.size.z * this.size.z)));
+        alpha = v.dot(v.applyMatrix4(M));
+        beta = v.dot(r0d.applyMatrix4(M));
+        gamma = r0d.dot(r0d.applyMatrix4(M)) - K;
+        D = beta * beta - alpha * gamma;
+
+        if (D < 0) {
+            return -1;
+        }
+        else {
+            return (-beta - Math.sqrt(D)) / alpha;
+        }
     }
 
     calcNorm(p: THREE.Vector3): THREE.Vector3 {
