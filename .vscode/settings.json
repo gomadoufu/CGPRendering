@@ -2,4 +2,5 @@
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.tsdk": "./node_modules/typescript/lib",
   "debug.javascript.usePreview": false,
+  "git.ignoreLimitWarning": true
 }
