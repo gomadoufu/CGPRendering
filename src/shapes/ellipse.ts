@@ -1,3 +1,4 @@
+//20FI086 橋本慶紀
 import * as THREE from "three";
 import { BaseShape } from "./baseshape";
 import { PointLight } from "../pointlight";
