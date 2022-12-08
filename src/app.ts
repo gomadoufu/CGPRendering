@@ -4,7 +4,7 @@ import { BaseShape } from "./shapes/baseshape";
 import { Ellipse } from "./shapes/ellipse";
 import { Triangle } from "./shapes/triangle";
 
-import rtScene from "./scenes/scene1";
+import rtScene from "./scenes/scene4";
 
 class ThreeJSContainer {
     private bgcolor: THREE.Color;
